@@ -2,6 +2,7 @@
 
 module Top(
     input Clk, Reset,
+    input [5:0] Stop
     output [7:0] Anode,
     output [7:0] Display
 );
@@ -34,7 +35,7 @@ module Top(
     
     Adder (.Adder_Out(Sum_Output), .Ones_Counter(Ones_Counter_Out), .X10(Mult10_Out));
 
-    comparator(.Comp_A(Sum_Output),.Comp_B(), .CompO(Comparator_Out));
+    comparator(.Comp_A(Sum_Output),.Comp_B(Stop), .CompO(Comparator_Out));
 
     mult_ten(.in(Tens_Counter_Out), .out(Mult10_Out));
 
