@@ -2,7 +2,7 @@
 
 module Top(
     input Clk, Reset,
-    input [5:0] Stop
+    input [5:0] Stop,
     output [7:0] Anode,
     output [7:0] Display
 );
